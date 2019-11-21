@@ -5,12 +5,13 @@ pipeline {
     {
         stage('Build') 
         {
-            steps {script 
-						{
-							MSBuildHome = tool 'MSBuild'
-						}			
-						bat "nuget restore" 
-						bat "${MSBuildHome}\\MSBuild.exe PerfectBody-DevOps\\PerfectBody.sln"
+            steps {
+		    script 
+			{
+				MSBuildHome = tool 'MSBuild'
+			}			
+			bat "nuget restore PerfectBody-DevOps\\PerfectBody.sln" 
+			bat "${MSBuildHome}\\MSBuild.exe PerfectBody-DevOps\\PerfectBody.sln"
         }
     }
         stage('Test') {
