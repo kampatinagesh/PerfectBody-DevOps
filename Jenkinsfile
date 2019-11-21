@@ -10,7 +10,7 @@ pipeline {
 			{
 				MSBuildHome = tool 'MSBuild'
 			}			
-			bat "nuget restore PerfectBody-DevOps\\PerfectBody.sln" 
+			bat "nuget.exe restore PerfectBody-DevOps\\PerfectBody.sln" 
 			bat "${MSBuildHome}\\MSBuild.exe PerfectBody-DevOps\\PerfectBody.sln"
         }
     }
